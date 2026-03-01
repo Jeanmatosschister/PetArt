@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetArt - Loja Completa</title>
+    <style>
+        /* Estilos básicos para garantir que nada trave */
+        body { font-family: sans-serif; margin: 0; padding: 0; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+        .product-card { border: 1px solid #ccc; padding: 15px; border-radius: 10px; text-align: center; }
+        img { max-width: 100%; height: auto; }
+        header { background: #FF6B6B; color: white; padding: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PetArt</h1>
+    </header>
+
+    <div class="products-grid" id="produtos">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?w=300" alt="Cama Pet">
+            <h3>Cama Artesanal Premium</h3>
+            <p>R$ 299,90</p>
+            <button onclick="alert('Produto adicionado!')">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=300" alt="Arranhador">
+            <h3>Arranhador Designer</h3>
+            <p>R$ 249,90</p>
+            <button onclick="alert('Produto adicionado!')">Comprar</button>
+        </div>
+    </div>
+</body>
+</html>
