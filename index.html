@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetArt - Amor em Cada Detalhe</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4; }
+        h1 { text-align: center; color: #333; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: auto; }
+        .product-card { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+        .product-card img { width: 100%; border-radius: 8px; }
+        .btn-comprar { display: block; width: 100%; padding: 10px; background: #FF6B6B; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>PetArt</h1>
+    <div class="products-grid">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?w=400" alt="Cama Pet">
+            <h3>Cama Artesanal Premium</h3>
+            <p>R$ 299,90</p>
+            <button class="btn-comprar" onclick="alert('Redirecionando para pagamento...')">Comprar Agora</button>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?w=400" alt="Arranhador">
+            <h3>Arranhador Designer</h3>
+            <p>R$ 249,90</p>
+            <button class="btn-comprar" onclick="alert('Redirecionando para pagamento...')">Comprar Agora</button>
+        </div>
+    </div>
+</body>
+</html>
