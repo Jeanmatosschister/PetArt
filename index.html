@@ -1,0 +1,74 @@
+<script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.getElementById('loader').classList.add('hidden');
+        }, 1000);
+    });
+
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Cart
+    let cart = [];
+
+    function toggleCart() {
+        document.getElementById('cartModal').classList.toggle('active');
+        document.getElementById('cartOverlay').classList.toggle('active');
+        document.body.style.overflow =
+            document.getElementById('cartModal').classList.contains('active')
+                ? 'hidden'
+                : '';
+    }
+
+    function addToCart(name, price) {
+        const existingItem = cart.find(item => item.name === name);
+
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            cart.push({ name, price, quantity: 1 });
+        }
+
+        updateCart();
+    }
+
+    function updateCart() {
+        const cartItems = document.getElementById('cartItems');
+        const cartCount = document.getElementById('cartCount');
+        const cartTotal = document.getElementById('cartTotal');
+
+        const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+        const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+
+        cartCount.textContent = totalItems;
+
+        if (cart.length === 0) {
+            cartItems.innerHTML = `<p style="text-align:center;color:#999;margin-top:2rem;">
+                Seu carrinho está vazio 🐾
+            </p>`;
+        } else {
+            cartItems.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div>Qtd: ${item.quantity}</div>
+                        <div class="cart-item-price">
+                            R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        cartTotal.textContent =
+            'R$ ' + totalPrice.toFixed(2).replace('.', ',');
+    }
+</script>
